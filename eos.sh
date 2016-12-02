@@ -28,3 +28,5 @@ en-saylor
 en-oya
 en-boundless
 #I just want this rsync command to be automated, and RACHEL to put in a folder that is READ-ONLY for users
+
+#install chrome - instructions on community.endlessm.com
