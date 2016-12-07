@@ -6,10 +6,16 @@ org.kde.Killbots net.olofson.Kobodeluxe org.marsshooter.Marsshooter com.endlessm
 org.megaglest.Megaglest org.openarena.Openarena net.sourceforge.Warmux net.wz2100.Warzone2100 \
 org.wesnoth.Wesnoth"
 
-APPS_TO_INSTALL="com.google.Chrome"
+APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite"
 
 REMOVE_USER="shared"
 ADD_USER="user"
+
+RSYNC_SERVER=$1
+DEST_DIR="/opt"
+
+RACHEL_MODS="en-boundless en-ck12 en-edison en-GCF2015 en-math_expression en-musictheory \
+en-oya en-law_library en-phet en-radiolab en-saylor"
 
 function delete_applications {
     echo "Starting applications deleting"
@@ -71,9 +77,20 @@ function check_if_root {
     fi
 }
 
+function download_rachelusb {
+    if [ ! -z "$RSYNC_SERVER" ]; then
+        echo "Starting downloading RACHELUSB from rsync server"
+        rsync -az --info=progress2 rsync://$RSYNC_SERVER $DEST_DIR
+        for RACHEL_MOD in $RACHEL_MODS; do
+            rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/$RACHEL_MOD $DEST_DIR
+    fi
+}
+
 check_if_root
 disable_social_bar
 delete_applications
 install_applications
+download_rachelusb
 delete_user
 create_user
+exit 0
