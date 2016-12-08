@@ -13,12 +13,12 @@ ADD_USER="user"
 
 RSYNC_SERVER=$1
 DEST_DIR="/opt"
-
+KALITE_CONTENT="/var/lib/kalite/content"
 RACHEL_MODS="en-boundless en-ck12 en-edison en-GCF2015 en-math_expression en-musictheory \
 en-oya en-law_library en-phet en-radiolab en-saylor"
 
 function delete_applications {
-    echo "Starting applications deleting"
+    echo "Starting to delete applications"
     for APP in $APPS_TO_REMOVE; do
         if `flatpak uninstall $APP`; then
             echo "$APP has been removed"
@@ -30,7 +30,7 @@ function delete_applications {
 }
 
 function install_applications {
-    echo "Starting applications installiation"
+    echo "Starting to install applications"
     for APP in $APPS_TO_INSTALL; do
         if `flatpak install eos-apps $APP eos3.0`; then
             echo "$APP has been installed"
@@ -79,11 +79,16 @@ function check_if_root {
 
 function download_rachelusb {
     if [ ! -z "$RSYNC_SERVER" ]; then
-        echo "Starting downloading RACHELUSB from rsync server"
+        echo "Starting to download RACHELUSB from rsync server"
         rsync -az --info=progress2 rsync://$RSYNC_SERVER $DEST_DIR
         for RACHEL_MOD in $RACHEL_MODS; do
             rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/$RACHEL_MOD $DEST_DIR
     fi
+}
+
+function download_kalite_content {
+    echo "Starting to download KA Lite content"
+    rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/en-kalite/content $KALITE_CONTENT
 }
 
 check_if_root
@@ -91,6 +96,7 @@ disable_social_bar
 delete_applications
 install_applications
 download_rachelusb
+download_kalite_content
 delete_user
 create_user
 exit 0
