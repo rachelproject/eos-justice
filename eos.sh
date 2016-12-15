@@ -83,6 +83,7 @@ function download_rachelusb {
         rsync -az --info=progress2 rsync://$RSYNC_SERVER $DEST_DIR
         for RACHEL_MOD in $RACHEL_MODS; do
             rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/$RACHEL_MOD $DEST_DIR
+        done
     fi
 }
 
