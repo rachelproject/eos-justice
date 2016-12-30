@@ -13,9 +13,26 @@ ADD_USER="user"
 
 RSYNC_SERVER=$1
 DEST_DIR="/opt"
-KALITE_CONTENT="/var/lib/kalite/content"
+KALITE_CONTENT="/var/lib/kalite"
 RACHEL_MODS="en-boundless en-ck12 en-edison en-GCF2015 en-math_expression en-musictheory \
 en-oya en-law_library en-phet en-radiolab en-saylor"
+
+TASKBAR_PINS="['google-chrome.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop']"
+DESKTOP_GRID="{'desktop': ['google-chrome.desktop', \
+'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'rhythmbox.desktop', \
+'com.endlessm.photos.desktop', 'com.endlessm.encyclopedia.en.desktop', 'net.minetest.Minetest.desktop', \
+'com.endlessm.videonet.desktop', 'eos-folder-media.directory', 'eos-folder-work.directory', \
+'eos-folder-curiosity.directory', 'eos-folder-social.directory', 'org.learningequality.KALite.desktop'], \
+'eos-folder-media.directory': ['shotwell.desktop', 'org.gnome.Totem.desktop', \
+'net.sourceforge.Audacity.desktop', 'org.tuxpaint.Tuxpaint.desktop', 'org.gimp.Gimp.desktop'], \
+'eos-folder-work.directory': ['libreoffice-calc.desktop', 'libreoffice-impress.desktop', \
+'gnome-calculator.desktop', 'com.endlessm.finance.desktop', 'com.endlessm.resume.desktop', \
+'com.endlessm.translation.desktop'], 'eos-folder-curiosity.directory': \
+['com.endlessm.cooking.en.desktop', 'com.endlessm.celebrities.en.desktop', \
+'com.endlessm.myths.en.desktop', 'com.endlessm.math.en.desktop', 'com.endlessm.howto.en.desktop', \
+'com.endlessm.travel.en.desktop', 'com.endlessm.health.en.desktop', 'kde4-org.kde.Marble.desktop', \
+'eos-link-duolingo.desktop'], 'eos-folder-social.directory': ['eos-link-facebook.desktop', \
+'eos-link-whatsapp.desktop', 'evolution.desktop', 'eos-link-gmail.desktop']}"
 
 function delete_applications {
     echo "Starting to delete applications"
@@ -61,12 +78,21 @@ function create_user {
     fi
 }
 
-function disable_social_bar {
-    echo "Disabling social bar"
+function tweak_desktop {
     if `gsettings set org.gnome.shell enable-social-bar false`; then
         echo "Social bar has been disabled"
     else
         echo "Social bar disabling failed"
+    fi
+    if `gsettings set org.gnome.shell taskbar-pins "$TASKBAR_PINS"`; then
+        echo "Taskbar pins have been changed"
+    else
+        echo "Taskbar pins changing failed"
+    fi
+    if `gsettings set org.gnome.shell icon-grid-layout "$DESKTOP_GRID"`; then
+        echo "Desktop has been changed"
+    else
+        echo "Desktop changing failed"
     fi
 }
 
@@ -89,15 +115,19 @@ function download_rachelusb {
 
 function download_kalite_content {
     echo "Starting to download KA Lite content"
-    rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/en-kalite/content $KALITE_CONTENT
+    rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/en-kalite/content $KALITE_CONTENT/content/
+    echo "Replacing the DB"
+    rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/en-kalite/content_khan_en.sqlite $KALITE_CONTENT/database/
+    chown kalite:kalite $KALITE_CONTENT/database/content_khan_en.sqlite
+    chmod 644 $KALITE_CONTENT/database/content_khan_en.sqlite
 }
 
 check_if_root
-disable_social_bar
 delete_applications
 install_applications
 download_rachelusb
 download_kalite_content
+tweak_desktop
 delete_user
 create_user
 exit 0
