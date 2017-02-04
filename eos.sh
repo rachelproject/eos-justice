@@ -11,7 +11,12 @@ APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite"
 REMOVE_USER="shared"
 ADD_USER="user"
 
-RSYNC_SERVER=$1
+if [ ! -z "$1" ]; then
+    RSYNC_SERVER=$1
+else
+    RSYNC_SERVER="dev.worldpossible.org"
+fi
+
 DEST_DIR="/opt"
 KALITE_CONTENT="/var/lib/kalite"
 RACHEL_MODS="en-boundless en-ck12 en-edison en-GCF2015 en-math_expression en-musictheory \
@@ -104,13 +109,11 @@ function check_if_root {
 }
 
 function download_rachelusb {
-    if [ ! -z "$RSYNC_SERVER" ]; then
-        echo "Starting to download RACHELUSB from rsync server"
-        rsync -az --info=progress2 rsync://$RSYNC_SERVER $DEST_DIR
-        for RACHEL_MOD in $RACHEL_MODS; do
-            rsync -az --info=progress2 rsync://dev.worldpossible.org/rachelmods/$RACHEL_MOD $DEST_DIR
-        done
-    fi
+    echo "Starting to download RACHELUSB from rsync server"
+    rsync -az --info=progress2 rsync://$RSYNC_SERVER $DEST_DIR
+    for RACHEL_MOD in $RACHEL_MODS; do
+        rsync -az --info=progress2 rsync://$RSYNC_SERVER/rachelmods/$RACHEL_MOD $DEST_DIR
+    done
 }
 
 function download_kalite_content {
