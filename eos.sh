@@ -20,7 +20,7 @@ fi
 DEST_DIR="/opt"
 KALITE_CONTENT="/var/lib/kalite"
 RACHEL_MODS="en-boundless en-ck12 en-edison en-GCF2015 en-math_expression en-musictheory \
-en-oya en-law_library en-phet en-radiolab en-saylor"
+en-oya en-law_library en-PhET en-radiolab en-saylor"
 
 TASKBAR_PINS="['google-chrome.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop']"
 DESKTOP_GRID="{'desktop': ['google-chrome.desktop', \
