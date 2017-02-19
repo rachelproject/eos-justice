@@ -4,7 +4,7 @@ APPS_TO_REMOVE="org.kde.Knavalbattle net.sourceforge.Atanks net.sourceforge.Btan
 com.endlessm.celebrities.en com.endlessm.cooking.en com.endlessm.encyclopedia.en \
 org.kde.Killbots net.olofson.Kobodeluxe org.marsshooter.Marsshooter com.endlessm.maternity.en \
 org.megaglest.Megaglest org.openarena.Openarena net.sourceforge.Warmux net.wz2100.Warzone2100 \
-org.wesnoth.Wesnoth"
+org.wesnoth.Wesnoth com.endlessm.videonet com.endlessm.weather"
 
 APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite"
 
