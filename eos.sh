@@ -42,7 +42,8 @@ DESKTOP_GRID="{'desktop': ['google-chrome.desktop', \
 function delete_applications {
     echo "Starting to delete applications"
     for APP in $APPS_TO_REMOVE; do
-        if `flatpak uninstall $APP`; then
+        flatpak uninstall $APP
+        if [ $? -eq 0 ]; then
             echo "$APP has been removed"
         else
             echo "Deleting $APP failed"
@@ -54,7 +55,8 @@ function delete_applications {
 function install_applications {
     echo "Starting to install applications"
     for APP in $APPS_TO_INSTALL; do
-        if `flatpak install eos-apps $APP eos3.0`; then
+        flatpak install eos-apps $APP eos3.1
+        if [ $? -eq 0 ]; then
             echo "$APP has been installed"
         else
             echo "$APP installation failed"
