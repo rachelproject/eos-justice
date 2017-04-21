@@ -6,7 +6,8 @@ org.kde.Killbots net.olofson.Kobodeluxe org.marsshooter.Marsshooter com.endlessm
 org.megaglest.Megaglest org.openarena.Openarena net.sourceforge.Warmux net.wz2100.Warzone2100 \
 org.wesnoth.Wesnoth com.endlessm.videonet com.endlessm.weather"
 
-APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite"
+APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite com.arduino.App org.snap4arduino.App \
+org.processing.App org.codeblocks.App org.gnome.Builder com.google.AndroidStudio"
 
 REMOVE_USER="shared"
 ADD_USER="user"
