@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCHEMA_PATH="/usr/share/glib-2.0/schemas/50_eos-theme.gschema.override"
+
 APPS_TO_REMOVE="org.kde.Knavalbattle net.sourceforge.Atanks net.sourceforge.Btanks \
 com.endlessm.celebrities.en com.endlessm.cooking.en com.endlessm.encyclopedia.en \
 org.kde.Killbots net.olofson.Kobodeluxe org.marsshooter.Marsshooter com.endlessm.maternity.en \
@@ -24,7 +26,8 @@ RACHEL_MODS="en-boundless en-ck12 en-edison en-GCF2015 en-math_expression en-mus
 en-oya en-law_library en-PhET en-radiolab en-saylor"
 
 TASKBAR_PINS="['google-chrome.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop']"
-DESKTOP_GRID="{'desktop': ['google-chrome.desktop', \
+DESKTOP_GRID="{'desktop': ['google-chrome.desktop', 'rachel_bookmark1.desktop', 'rachel_bookmark2.desktop', \
+'rachel_bookmark3.desktop', 'rachel_bookmark4.desktop', 'rachel_bookmark5.desktop', \
 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'rhythmbox.desktop', \
 'com.endlessm.photos.desktop', 'com.endlessm.encyclopedia.en.desktop', 'net.minetest.Minetest.desktop', \
 'com.endlessm.videonet.desktop', 'eos-folder-media.directory', 'eos-folder-work.directory', \
@@ -39,6 +42,23 @@ DESKTOP_GRID="{'desktop': ['google-chrome.desktop', \
 'com.endlessm.travel.en.desktop', 'com.endlessm.health.en.desktop', 'kde4-org.kde.Marble.desktop', \
 'eos-link-duolingo.desktop'], 'eos-folder-social.directory': ['eos-link-facebook.desktop', \
 'eos-link-whatsapp.desktop', 'evolution.desktop', 'eos-link-gmail.desktop']}"
+
+DEVICE=`mount | grep /usr | cut -d " " -f 1`
+
+BOOKMARK_TEMPLATE="
+[Desktop Entry]\n\
+Version=1.0\n\
+Type=Application\n\
+Exec=gvfs-open {path}\n\
+X-Endless-LaunchMaximized=true\n\
+Name={name}"
+
+BOOKMARK1="/var/opt/rachelusb_32JU/RACHEL/index.html:Home"
+BOOKMARK2="/var/opt/rachelusb_32JU/RACHEL/modules/en-GCF2015/index.html:125+_Free_Tutorials_at_GCFLearnFree.org"
+BOOKMARK3="/var/opt/rachelusb_32JU/RACHEL/modules/en-rachelcourses/index.html:College_Credit_Courses_from_World_Possible"
+BOOKMARK4="/var/opt/rachelusb_32JU/RACHEL/modules/en-oya-static/index.html:Education_Portal_Course_Index"
+BOOKMARK5="/var/opt/rachelusb_32JU/RACHEL/modules/saylor/content/www.saylor.org/books.html:Saylor_Academy_Open_Textbooks"
+BOOKMARKS=( $BOOKMARK1 $BOOKMARK2 $BOOKMARK3 $BOOKMARK4 $BOOKMARK5 )
 
 function delete_applications {
     echo "Starting to delete applications"
@@ -86,22 +106,23 @@ function create_user {
     fi
 }
 
+function put_bookmarks {
+    echo "Creating bookmarks"
+    i=1
+    for bookmark in "${BOOKMARKS[@]}"; do
+        path=`echo $bookmark | cut -d : -f 1`
+        name=`echo $bookmark | cut -d : -f 2`
+        echo -e $BOOKMARK_TEMPLATE | sed -e "s~{path}~$path~g;s/{name}/$name/g" > /usr/share/applications/rachel_bookmark$i.desktop
+        ((i++))
+    done
+}
+
 function tweak_desktop {
-    if `gsettings set org.gnome.shell enable-social-bar false`; then
-        echo "Social bar has been disabled"
-    else
-        echo "Social bar disabling failed"
-    fi
-    if `gsettings set org.gnome.shell taskbar-pins "$TASKBAR_PINS"`; then
-        echo "Taskbar pins have been changed"
-    else
-        echo "Taskbar pins changing failed"
-    fi
-    if `gsettings set org.gnome.shell icon-grid-layout "$DESKTOP_GRID"`; then
-        echo "Desktop has been changed"
-    else
-        echo "Desktop changing failed"
-    fi
+    echo "Tweaking desktop defaults"
+    echo -e "[org.gnome.shell]\ntaskbar-pins=$TASKBAR_PINS\n" >> $SCHEMA_PATH
+    echo -e "[org.gnome.shell]\nenable-social-bar=false\n" >> $SCHEMA_PATH
+    sed -i "s/\(icon-grid-layout=\)\(.*\)/\1$DESKTOP_GRID/" $SCHEMA_PATH
+    glib-compile-schemas /usr/share/glib-2.0/schemas/
 }
 
 function check_if_root {
@@ -129,10 +150,12 @@ function download_kalite_content {
 }
 
 check_if_root
+mount -o remount,rw $DEVICE /usr
 delete_applications
 install_applications
 download_rachelusb
 download_kalite_content
+put_bookmarks
 tweak_desktop
 delete_user
 create_user
