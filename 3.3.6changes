@@ -1,4 +1,5 @@
 #remove social media icons
+appears to be done, confirm with Frank
 
 #remove sample items within new users Music, Videos, and Pictures folders /Home/Video/Samples/*
 if files are deleted from admin account, they will also be removed from all existing and future student accounts. Let's remove these files as a default
@@ -11,3 +12,6 @@ Great books, Fantastic Phonics, TED Talks??,
 
 #removed pregnancy pictures from master module of Wikipedia for Schools (Static)
 must push to RACHEL on Endless OS
+
+#we need to set a defauly password for admin on KA-Lite
+in kalite /content/r_rVyt-ojpY.mp4 (I am not sure the full file path in front of content, I think it is var/.kalite/content
