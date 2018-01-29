@@ -15,3 +15,12 @@ must push to RACHEL on Endless OS
 
 #we need to set a defauly password for admin on KA-Lite
 in kalite /content/r_rVyt-ojpY.mp4 (I am not sure the full file path in front of content, I think it is var/.kalite/content
+
+#create a script similar to jsync which allows for linux disabling of ports (added precaution in addition to hardware disablement and bios disablement)
+we have instructions
+
+#GCFLearnFree 
+make sure videos play and remove the mouse video -- can we install flash on these systems?
+
+#createscript for admin to view a users documents like jsync (gui based as much as possible)
+
