@@ -2,7 +2,15 @@
 
 SCHEMA_PATH="/usr/share/glib-2.0/schemas/50_eos-theme.gschema.override"
 
-APPS_TO_REMOVE="com.endlessm.biology.en com.endlessm.celebrities.en"
+APPS_TO_REMOVE="com.endlessm.biology.en com.endlessm.celebrities.en com.endlessm.disabilities.en com.endlessm.encyclopedia.en \
+com.endlessm.health.en com.endlessm.healthy_teeth.en com.endlessm.howto.en com.endlessm.maternity.en \
+com.endlessm.soccer.en com.endlessm.socialsciences.en com.endlessm.travel.en com.endlessm.wiki_art.en \
+com.teeworlds.Teeworlds net.olofson.KoboDeluxe \
+net.sourceforge.atanks net.sourceforge.btanks net.sourceforge.chromium-bsu net.sourceforge.ExtremeTuxRacer \
+net.sourceforge.mars-game net.sourceforge.Ri-li net.sourceforge.torcs net.sourceforge.SuperTuxKart \
+net.wz2100.wz2100 org.armagetronad.ArmagetronAdvanced org.audacityteam.Audacity \
+org.gna.Warmux org.gnome.Weather org.kde.kigo org.kde.killbots \
+org.kde.klines org.kde.knetwalk org.megaglest.MegaGlest org.wesnoth.Wesnoth ws.openarena.OpenArena"
 
 APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite com.arduino.App org.snap4arduino.App \
 org.processing.App org.codeblocks.App org.gnome.Builder com.google.AndroidStudio"
