@@ -138,7 +138,7 @@ function download_rachelusb {
 function download_kalite_content {
     echo "Starting to download KA Lite content"
     rsync -az --info=progress2 rsync://$RSYNC_SERVER/rachelmods/en-kalite/content $KALITE_CONTENT
-    echo replacing the DB"
+    echo "Replacing the DB"
     rsync -az --info=progress2 rsync://$RSYNC_SERVER/rachelmods/en-kalite/content_khan_en.sqlite $KALITE_CONTENT/database/
     chown kalite:kalite $KALITE_CONTENT/database/content_khan_en.sqlite
     chmod 644 $KALITE_CONTENT/database/content_khan_en.sqlite
