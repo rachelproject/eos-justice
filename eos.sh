@@ -140,6 +140,19 @@ function download_rachelusb {
     for RACHEL_MOD in $RACHEL_MODS; do
         rsync -az --info=progress2 rsync://$RSYNC_SERVER/all/$RACHEL_MOD $DEST_DIR
     done
+    echo "Cleaning up RACHEL"
+    rm $DEST_DIR/RACHEL/modules/en-learnsaylor/course/nanking.pdf
+    rm $DEST_DIR/RACHEL/modules/en-learnsaylor/mod/page/RobertMapplethorpeArtworks.pdf
+    rm $DEST_DIR/RACHEL/modules/en-learnsaylor/mod/page/bihbbqzl96y.mp4
+    rm $DEST_DIR/RACHEL/modules/en-learnsaylor/mod/page/bihbbqzl96y.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272728.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272732.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272733.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272734.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272735.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272736.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272737.png
+    rm $DEST_DIR/RACHEL/modules/Wikipedia-for-schools/images/2727/272738.png
 }
 
 function download_kalite_content {
