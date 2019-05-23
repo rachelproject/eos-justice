@@ -17,12 +17,12 @@ ADD_USER="user"
 if [ ! -z "$1" ]; then
     RSYNC_SERVER=$1
 else
-    RSYNC_SERVER="dev.worldpossible.org"
+    RSYNC_SERVER="192.168.1.10"
 fi
 
 DEST_DIR="/opt"
 KALITE_CONTENT="/var/lib/kalite"
-RACHEL_MODS="rachelusb_32JU_1.21d"
+RACHEL_MODS="rachelusb_32JU_1.21"
 
 TASKBAR_PINS="['google-chrome.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop']"
 DESKTOP_GRID="{'desktop': ['google-chrome.desktop', 'rachel_bookmark1.desktop', 'rachel_bookmark2.desktop', \
