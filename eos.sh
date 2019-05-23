@@ -142,11 +142,19 @@ function download_rachelusb {
 function download_kalite_content {
     echo "Starting to download KA Lite content"
     rsync -az --info=progress2 rsync://$RSYNC_SERVER/rachelmods/en-kalite/content $KALITE_CONTENT
-    echo "Replacing the DB"
+    echo replacing the DB"
     rsync -az --info=progress2 rsync://$RSYNC_SERVER/rachelmods/en-kalite/content_khan_en.sqlite $KALITE_CONTENT/database/
     chown kalite:kalite $KALITE_CONTENT/database/content_khan_en.sqlite
     chmod 644 $KALITE_CONTENT/database/content_khan_en.sqlite
 }
+
+function content_cleanup {
+    echo "cleaning up preinstalled endless-content"
+    rm -r /var/endless-content/music/*
+    rm -r /var/endless-content/pictures/*
+    rm -r /var/endless-content/videos/*
+}
+       
 
 check_if_root
 mount -o remount,rw $DEVICE /usr
@@ -154,6 +162,7 @@ mount -o remount,rw $DEVICE /usr
 #install_applications
 download_rachelusb
 #download_kalite_content
+content_cleanup
 #put_bookmarks
 #tweak_desktop
 #delete_user
