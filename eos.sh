@@ -13,14 +13,15 @@ org.gna.Warmux org.gnome.Weather org.kde.kigo org.kde.killbots \
 org.kde.klines org.kde.knetwalk org.megaglest.MegaGlest org.wesnoth.Wesnoth ws.openarena.OpenArena"
 
 APPS_TO_INSTALL="org.learningequality.KALite com.endlessm.vroom.en com.endlessm.ubongo_kids_demo \
-com.endlessm.programming com.endlessm.programming_guide.en "
+com.endlessm.programming com.endlessm.programming_guide.en en.endlessm.bible.en en.endlessm.green_curriculum.en \
+info.bibletime.BibleTime "
 
 REMOVE_USER="shared"
 ADD_USER="user"
 
 if [ ! -z "$1" ]; then
     RSYNC_SERVER=$1
-else
+elsenan
     RSYNC_SERVER="192.168.1.10"
 fi
 
@@ -177,8 +178,8 @@ check_if_root
 mount -o remount,rw $DEVICE /usr
 delete_applications
 install_applications
-#download_rachelusb
-#download_kalite_content
+download_rachelusb
+download_kalite_content
 #content_cleanup
 #put_bookmarks
 #tweak_desktop
