@@ -2,11 +2,7 @@
 
 SCHEMA_PATH="/usr/share/glib-2.0/schemas/50_eos-theme.gschema.override"
 
-APPS_TO_REMOVE="org.kde.Knavalbattle net.sourceforge.Atanks net.sourceforge.Btanks \
-com.endlessm.celebrities.en com.endlessm.cooking.en com.endlessm.encyclopedia.en \
-org.kde.Killbots net.olofson.Kobodeluxe org.marsshooter.Marsshooter com.endlessm.maternity.en \
-org.megaglest.Megaglest org.openarena.Openarena net.sourceforge.Warmux net.wz2100.Warzone2100 \
-org.wesnoth.Wesnoth com.endlessm.videonet com.endlessm.weather"
+APPS_TO_REMOVE="com.endlessm.biology.en com.endlessm.celebrities.en"
 
 APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite com.arduino.App org.snap4arduino.App \
 org.processing.App org.codeblocks.App org.gnome.Builder com.google.AndroidStudio"
@@ -158,11 +154,11 @@ function content_cleanup {
 
 check_if_root
 mount -o remount,rw $DEVICE /usr
-#delete_applications
+delete_applications
 #install_applications
-download_rachelusb
+#download_rachelusb
 #download_kalite_content
-content_cleanup
+#content_cleanup
 #put_bookmarks
 #tweak_desktop
 #delete_user
