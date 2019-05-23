@@ -12,8 +12,7 @@ net.wz2100.wz2100 org.armagetronad.ArmagetronAdvanced org.audacityteam.Audacity 
 org.gna.Warmux org.gnome.Weather org.kde.kigo org.kde.killbots \
 org.kde.klines org.kde.knetwalk org.megaglest.MegaGlest org.wesnoth.Wesnoth ws.openarena.OpenArena"
 
-APPS_TO_INSTALL="com.google.Chrome org.learningequality.KALite com.arduino.App org.snap4arduino.App \
-org.processing.App org.codeblocks.App org.gnome.Builder com.google.AndroidStudio"
+APPS_TO_INSTALL="org.learningequality.KALite"
 
 REMOVE_USER="shared"
 ADD_USER="user"
@@ -163,7 +162,7 @@ function content_cleanup {
 check_if_root
 mount -o remount,rw $DEVICE /usr
 delete_applications
-#install_applications
+install_applications
 #download_rachelusb
 #download_kalite_content
 #content_cleanup
