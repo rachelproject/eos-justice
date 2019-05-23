@@ -66,7 +66,7 @@ BOOKMARKS=( $BOOKMARK1 $BOOKMARK2 $BOOKMARK3 $BOOKMARK4 $BOOKMARK5 )
 function delete_applications {
     echo "Starting to delete applications"
     for APP in $APPS_TO_REMOVE; do
-        flatpak uninstall $APP
+        flatpak uninstall -y $APP
         if [ $? -eq 0 ]; then
             echo "$APP has been removed"
         else
