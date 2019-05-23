@@ -151,12 +151,12 @@ function download_kalite_content {
 
 check_if_root
 mount -o remount,rw $DEVICE /usr
-delete_applications
-install_applications
+#delete_applications
+#install_applications
 download_rachelusb
-download_kalite_content
-put_bookmarks
-tweak_desktop
-delete_user
-create_user
+#download_kalite_content
+#put_bookmarks
+#tweak_desktop
+#delete_user
+#create_user
 exit 0
