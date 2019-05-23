@@ -12,7 +12,8 @@ net.wz2100.wz2100 org.armagetronad.ArmagetronAdvanced org.audacityteam.Audacity 
 org.gna.Warmux org.gnome.Weather org.kde.kigo org.kde.killbots \
 org.kde.klines org.kde.knetwalk org.megaglest.MegaGlest org.wesnoth.Wesnoth ws.openarena.OpenArena"
 
-APPS_TO_INSTALL="org.learningequality.KALite"
+APPS_TO_INSTALL="org.learningequality.KALite com.endlessm.vroom.en com.endlessm.ubongo_kids_demo \
+com.endlessm.programming com.endlessm.programming_guide.en "
 
 REMOVE_USER="shared"
 ADD_USER="user"
