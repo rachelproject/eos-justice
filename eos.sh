@@ -22,8 +22,7 @@ fi
 
 DEST_DIR="/opt"
 KALITE_CONTENT="/var/lib/kalite"
-RACHEL_MODS="en-boundless en-ck12 en-edison en-GCF2015 en-math_expression en-musictheory \
-en-oya en-law_library en-PhET en-radiolab en-saylor"
+RACHEL_MODS="rachelusb_32JU_1.21.zip"
 
 TASKBAR_PINS="['google-chrome.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop']"
 DESKTOP_GRID="{'desktop': ['google-chrome.desktop', 'rachel_bookmark1.desktop', 'rachel_bookmark2.desktop', \
@@ -136,7 +135,7 @@ function download_rachelusb {
     echo "Starting to download RACHELUSB from rsync server"
     rsync -az --info=progress2 rsync://$RSYNC_SERVER $DEST_DIR
     for RACHEL_MOD in $RACHEL_MODS; do
-        rsync -az --info=progress2 rsync://$RSYNC_SERVER/rachelmods/$RACHEL_MOD $DEST_DIR
+        rsync -az --info=progress2 rsync://$RSYNC_SERVER/home/jeremy/office/rachelusb_32JU_1.21/$RACHEL_MOD $DEST_DIR
     done
 }
 
