@@ -79,7 +79,7 @@ function delete_applications {
 function install_applications {
     echo "Starting to install applications"
     for APP in $APPS_TO_INSTALL; do
-        flatpak install eos-apps $APP eos3.3
+        flatpak install -y eos-apps $APP
         if [ $? -eq 0 ]; then
             echo "$APP has been installed"
         else
