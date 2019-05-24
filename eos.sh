@@ -115,7 +115,7 @@ ADD_USER="user"
 
 if [ ! -z "$1" ]; then
     RSYNC_SERVER=$1
-elsenan
+else
     RSYNC_SERVER="192.168.1.10"
 fi
 
