@@ -2,7 +2,7 @@
 
 SCHEMA_PATH="/usr/share/glib-2.0/schemas/50_eos-theme.gschema.override"
 
-APPS_TO_REMOVE="com.endlessm.biology.en com.endlessm.celebrities.en com.endlessm.disabilities.en com.endlessm.encyclopedia.en \
+APPS_TO_REMOVE="com.endlessm.biology.en com.endlessm.celebrities.en com.endlessm.encyclopedia.en \
 com.endlessm.health.en com.endlessm.healthy_teeth.en com.endlessm.howto.en com.endlessm.maternity.en \
 com.endlessm.soccer.en com.endlessm.socialsciences.en com.endlessm.travel.en com.endlessm.wiki_art.en \
 com.teeworlds.Teeworlds net.olofson.KoboDeluxe \
@@ -14,7 +14,7 @@ org.kde.klines org.kde.knetwalk org.megaglest.MegaGlest org.wesnoth.Wesnoth ws.o
 
 APPS_TO_INSTALL="org.learningequality.KALite com.endlessm.vroom.en com.endlessm.ubongo_kids_demo \
 com.endlessm.programming com.endlessm.programming_guide.en en.endlessm.bible.en en.endlessm.green_curriculum.en \
-info.bibletime.BibleTime "
+info.bibletime.BibleTime com.endlessnetwork.csstutorials com.endlessm.disabilities.en"
 
 REMOVE_USER="shared"
 ADD_USER="user"
