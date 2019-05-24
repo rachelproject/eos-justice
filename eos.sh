@@ -14,7 +14,101 @@ org.kde.klines org.kde.knetwalk org.megaglest.MegaGlest org.wesnoth.Wesnoth ws.o
 
 APPS_TO_INSTALL="org.learningequality.KALite com.endlessm.vroom.en com.endlessm.ubongo_kids_demo \
 com.endlessm.programming com.endlessm.programming_guide.en en.endlessm.bible.en en.endlessm.green_curriculum.en \
-info.bibletime.BibleTime com.endlessnetwork.csstutorials com.endlessm.disabilities.en"
+info.bibletime.BibleTime com.endlessnetwork.csstutorials com.endlessm.disabilities.en\
+com.endlessm.animals.en \
+com.endlessm.astronomy.en \
+com.endlessm.CompanionAppService \
+com.endlessm.dinosaurs.en \
+com.endlessm.disabilities.en \
+com.endlessm.EknServicesMultiplexer \
+com.endlessm.farming.en \
+com.endlessm.finance \
+com.endlessm.geography.en \
+com.endlessm.green_curriculum.en \
+com.endlessm.history.en \
+com.endlessm.ingles_con_rodrigo.es \
+com.endlessm.math.en \
+com.endlessm.myths.en \
+com.endlessm.photos \
+com.endlessm.physics.en \
+com.endlessm.programming \
+com.endlessm.programming_guide.en \
+com.endlessm.resume \
+com.endlessm.soccer.en \
+com.endlessm.socialsciences.en \
+com.endlessm.textbooks.en \
+com.endlessm.travel.en \
+com.endlessm.video_animal_kingdom \
+com.endlessm.vroom.en \
+com.github.labyrinth_team.labyrinth \
+com.github.ryanakca.slingshot \
+com.google.Chrome \
+com.tux4kids.tuxmath \
+com.tux4kids.tuxtype \
+fr.free.Homebank \
+io.thp.numptyphysics \
+net.blockout.BlockOutII \
+net.minetest.Minetest \
+net.sourceforge.atanks \
+net.sourceforge.btanks \
+net.sourceforge.chromium-bsu \
+net.sourceforge.ExtremeTuxRacer \
+net.sourceforge.Ri-li \
+net.sourceforge.torcs \
+net.sourceforge.TuxFootball \
+net.supertuxkart.SuperTuxKart \
+org.armagetronad.ArmagetronAdvanced \
+org.audacityteam.Audacity \
+org.debian.TuxPuck \
+org.freeciv.Freeciv \
+org.frozen_bubble.frozen-bubble \
+org.gimp.GIMP \
+org.gnome.Aisleriot \
+org.gnome.Genius \
+org.gnome.Gnote \
+org.gnome.iagno \
+org.gnome.quadrapassel \
+org.gnome.tetravex \
+org.gnome.Weather \
+org.inkscape.Inkscape \
+org.kde.gcompris \
+org.kde.kalzium \
+org.kde.kapman \
+org.kde.katomic \
+org.kde.kblocks \
+org.kde.kbounce \
+org.kde.kbruch \
+org.kde.kdiamond \
+org.kde.kgeography \
+org.kde.kgoldrunner \
+org.kde.khangman \
+org.kde.kigo \
+org.kde.kjumpingcube \
+org.kde.klickety \
+org.kde.klines \
+org.kde.knavalbattle \
+org.kde.knetwalk \
+org.kde.ksquares \
+org.kde.ksudoku \
+org.kde.ktuberling \
+org.kde.kubrick \
+org.kde.kwordquiz \
+org.kde.palapeli \
+org.laptop.TurtleArtActivity \
+org.learningequality.KALite \
+org.libreoffice.LibreOffice \
+org.mozilla.Firefox \
+org.openscad.OpenSCAD \
+org.pitivi.Pitivi \
+org.seul.pingus \
+org.speedcrunch.SpeedCrunch \
+org.squeakland.Scratch \
+org.stellarium.Stellarium \
+org.supertuxproject.SuperTux \
+org.tuxfamily.XMoto \
+org.tuxpaint.Tuxpaint \
+"
+
 
 REMOVE_USER="shared"
 ADD_USER="user"
