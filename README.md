@@ -12,3 +12,6 @@ where `rsync_argument` is a part of the rsync url after `rsync://`, e.g. `user@h
 
 ##Remove online accounts
 https://help.gnome.org/admin/system-admin-guide/stable/lockdown-online-accounts.html.en
+
+## Helpful stuff
+KA-Lite is installed at /var/lib/kalite
