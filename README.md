@@ -15,3 +15,4 @@ https://help.gnome.org/admin/system-admin-guide/stable/lockdown-online-accounts.
 
 ## Helpful stuff
 KA-Lite is installed at /var/lib/kalite
+Flatpak list at /var/lib/flatpak/app
