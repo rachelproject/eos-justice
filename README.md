@@ -19,3 +19,21 @@ https://help.gnome.org/admin/system-admin-guide/stable/lockdown-online-accounts.
 'Flatpak list at /var/lib/flatpak/app'
 
 command to see how much storage files take up 'sudo du -d 0 -BM *'
+
+
+
+
+## English Desktop JSON
+org.learningequality.KALite
+com.endlessm.vroom.en
+com.endlessm.resume
+com.endlessm.textbooks.en
+fr.free.Homebank 
+com.endlessm.finance
+com.tux4kids.tuxtype
+org.squeakland.Scratch
+com.endlessm.world_literature.en
+org.stellarium.Stellarium
+com.endlessm.travel.en
+com.endlessm.video_animal_kingdom
+
