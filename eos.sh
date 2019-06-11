@@ -12,9 +12,15 @@ net.wz2100.wz2100 org.armagetronad.ArmagetronAdvanced org.audacityteam.Audacity 
 org.gna.Warmux org.gnome.Weather org.kde.kigo org.kde.killbots \
 org.kde.klines org.kde.knetwalk org.megaglest.MegaGlest org.wesnoth.Wesnoth ws.openarena.OpenArena"
 
-APPS_TO_INSTALL="org.learningequality.KALite com.endlessm.vroom.en com.endlessm.ubongo_kids_demo \
-com.endlessm.programming com.endlessm.programming_guide.en en.endlessm.bible.en en.endlessm.green_curriculum.en \
-info.bibletime.BibleTime com.endlessnetwork.csstutorials com.endlessm.disabilities.en\
+APPS_TO_INSTALL="org.learningequality.KALite \
+com.endlessm.vroom.en \
+com.endlessm.ubongo_kids_demo \
+com.endlessm.programming \
+com.endlessm.programming_guide.en \
+en.endlessm.bible.en en.endlessm.green_curriculum.en \
+info.bibletime.BibleTime \
+com.endlessnetwork.csstutorials \
+com.endlessm.disabilities.en\
 com.endlessm.animals.en \
 com.endlessm.astronomy.en \
 com.endlessm.CompanionAppService \
@@ -26,7 +32,7 @@ com.endlessm.finance \
 com.endlessm.geography.en \
 com.endlessm.green_curriculum.en \
 com.endlessm.history.en \
-com.endlessm.ingles_con_rodrigo.es \
+#com.endlessm.ingles_con_rodrigo.es \
 com.endlessm.math.en \
 com.endlessm.myths.en \
 com.endlessm.photos \
@@ -54,9 +60,9 @@ net.sourceforge.btanks \
 net.sourceforge.chromium-bsu \
 net.sourceforge.ExtremeTuxRacer \
 net.sourceforge.Ri-li \
-net.sourceforge.torcs \
+#net.sourceforge.torcs \
 net.sourceforge.TuxFootball \
-net.supertuxkart.SuperTuxKart \
+#net.supertuxkart.SuperTuxKart \
 org.armagetronad.ArmagetronAdvanced \
 org.audacityteam.Audacity \
 org.debian.TuxPuck \
