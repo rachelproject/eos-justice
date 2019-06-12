@@ -42,7 +42,7 @@ com.endlessm.programming_guide.en \
 com.endlessm.resume \
 com.endlessm.soccer.en \
 com.endlessm.socialsciences.en \
-com.endlessm.textbooks.en \
+#com.endlessm.textbooks.en \
 com.endlessm.travel.en \
 com.endlessm.video_animal_kingdom \
 com.endlessm.vroom.en \
