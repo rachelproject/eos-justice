@@ -20,6 +20,7 @@ https://help.gnome.org/admin/system-admin-guide/stable/lockdown-online-accounts.
 
 command to see how much storage files take up 'sudo du -d 0 -BM *'
 
+' flatpak uninstall -y $APP'
 
 
 
