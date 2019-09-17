@@ -22,6 +22,8 @@ command to see how much storage files take up 'sudo du -d 0 -BM *'
 
 ' flatpak uninstall -y $APP'
 
+##to create a bootable usb - take RACHEL image, edit EFI/boot/grub.cfg and replace RACHEL-V3 with clonezilla image and point grub.cfg to clonezilla image and 'sda'
+
 
 
 ## English Desktop JSON
