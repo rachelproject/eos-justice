@@ -15,7 +15,7 @@ set -e
 # https://github.com/containers/libpod/issues/3759
 sudo podman pod create --publish 9006:80 --name eec
 sudo podman create --pod eec --name eec-mysql --mount
-type=bind,src=/path/to/data,dst=/var/lib/mysql -e MYSQL_ROOT_PASSWORD=QCBDLNa6 -e
+type=bind,src=/var/local/bin/rachel/modules/eec,dst=/var/lib/mysql -e MYSQL_ROOT_PASSWORD=QCBDLNa6 -e
 MYSQL_DATABASE=eec -e MYSQL_USER=eec -e MYSQL_PASSWORD=EbJEBWmE eec-mysql:5.0.0.5
 sudo podman create --pod eec --name eec-http eec-http:5.0.0.5-endlessos
 # Start the containers
