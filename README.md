@@ -43,3 +43,10 @@ org.stellarium.Stellarium
 com.endlessm.travel.en
 com.endlessm.video_animal_kingdom
 
+## Automatic Updates
+disable them:
+
+systemctl mask --now eos-autoupdater.service
+
+re-enable them:
+systemctl unmask eos-autoupdater.service
