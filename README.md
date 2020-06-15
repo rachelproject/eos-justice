@@ -27,6 +27,9 @@ command to see how much storage files take up 'sudo du -d 0 -BM *'
 
 
 ## English Desktop JSON
+
+json path/file: "/var/lib/eos-image-defaults/icon-grid/icon-grid-C.json
+
 org.learningequality.KALite
 com.endlessm.vroom.en
 com.endlessm.resume
