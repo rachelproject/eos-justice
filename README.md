@@ -30,6 +30,13 @@ command to see how much storage files take up 'sudo du -d 0 -BM *'
 
 json path/file: "/var/lib/eos-image-defaults/icon-grid/icon-grid-C.json
 
+Our custom apps are stored at:
+This is the desktop shortcut path: /usr/local/share/applications/
+
+AppEditor Flatpak can provide helpful clues
+
+adding .desktop to the name of a flatpak seems to work 98% of the time when adding items to icon-grid-C.json
+
 org.learningequality.KALite
 com.endlessm.vroom.en
 com.endlessm.resume
