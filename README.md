@@ -50,3 +50,5 @@ systemctl mask --now eos-autoupdater.service
 
 re-enable them:
 systemctl unmask eos-autoupdater.service
+
+A slightly cleaner way of disabling automatic updates is to copy /usr/share/eos-updater/eos-autoupdater.conf to /etc/eos-updater/ and change `LastAutomaticStep=3` to `LastAutomaticStep=1`, so that way the user will know when an update is available, it just won't be applied automatically.
