@@ -59,3 +59,21 @@ re-enable them:
 systemctl unmask eos-autoupdater.service
 
 A slightly cleaner way of disabling automatic updates is to copy /usr/share/eos-updater/eos-autoupdater.conf to /etc/eos-updater/ and change `LastAutomaticStep=3` to `LastAutomaticStep=1`, so that way the user will know when an update is available, it just won't be applied automatically.
+
+
+## Resize Disk
+when putting the smaller (240GB) Clonezilla image on a 480GB drive
+
+terminal
+sudo parted
+resizepart
+fix
+3
+yes
+479GB
+quit
+
+then in terminal
+sudo resize2fs /dev/sda3
+
+reboot and check df -h
