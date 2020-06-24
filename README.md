@@ -77,3 +77,6 @@ then in terminal
 sudo resize2fs /dev/sda3
 
 reboot and check df -h
+
+## Gnome Settings
+https://help.gnome.org/admin/system-admin-guide/stable/logout-automatic.html.en
