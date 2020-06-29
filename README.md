@@ -80,3 +80,7 @@ reboot and check df -h
 
 ## Gnome Settings
 https://help.gnome.org/admin/system-admin-guide/stable/logout-automatic.html.en
+
+## Clonezilla
+Disk must be FAT32, mn2f-portable software will convert NTFS to FAT32
+In the utils folder x64there is a makeboot.bat file which must be run as admin.
