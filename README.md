@@ -86,5 +86,7 @@ Disk must be FAT32, mn2f-portable software will convert NTFS to FAT32
 
 In the utils folder x64there is a makeboot.bat file which must be run as admin.
 
+This only works sometimes, must also make sure disk is "MBR" formatted. https://docs.microsoft.com/en-us/windows-server/storage/disk-management/change-a-gpt-disk-into-an-mbr-disk#:~:text=Back%20up%20or%20move%20all,click%20Convert%20to%20MBR%20disk.
+
 ## DirHTML Listings
 I am using Arclab Dir2HTML
