@@ -84,6 +84,25 @@ https://help.gnome.org/admin/system-admin-guide/stable/logout-automatic.html.en
 ## Clonezilla
 First, make sure disk is MBR formatted https://docs.microsoft.com/en-us/windows-server/storage/disk-management/change-a-gpt-disk-into-an-mbr-disk#:~:text=Back%20up%20or%20move%20all,click%20Convert%20to%20MBR%20disk.
 
+Converting using a command line
+Back up or move all volumes on the basic GPT disk you want to convert into an MBR disk.
+
+Open an elevated command prompt by right-clicking Command Prompt and then choosing Run as Administrator.
+
+Type diskpart. If the disk contains no partitions or volumes, skip to step 6.
+
+At the DISKPART prompt, type list disk. Note the disk number that you want to delete.
+
+At the DISKPART prompt, type select disk <disknumber>.
+
+At the DISKPART prompt, type clean.
+
+ Important
+
+Running the clean command will delete all partitions or volumes on the disk.
+
+At the DISKPART prompt, type convert mbr.
+
 Then. Disk must be FAT32, mn2f-portable software will convert NTFS to FAT32
 
 Afer imaging with Clonezilla, a double check can be In the utils folder x64there is a makeboot.bat file which must be run as admin.
