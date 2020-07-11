@@ -82,9 +82,11 @@ reboot and check df -h
 https://help.gnome.org/admin/system-admin-guide/stable/logout-automatic.html.en
 
 ## Clonezilla
-Disk must be FAT32, mn2f-portable software will convert NTFS to FAT32
+First, make sure disk is MBR formatted https://docs.microsoft.com/en-us/windows-server/storage/disk-management/change-a-gpt-disk-into-an-mbr-disk#:~:text=Back%20up%20or%20move%20all,click%20Convert%20to%20MBR%20disk.
 
-In the utils folder x64there is a makeboot.bat file which must be run as admin.
+Then. Disk must be FAT32, mn2f-portable software will convert NTFS to FAT32
+
+Afer imaging with Clonezilla, a double check can be In the utils folder x64there is a makeboot.bat file which must be run as admin.
 
 This only works sometimes, must also make sure disk is "MBR" formatted. https://docs.microsoft.com/en-us/windows-server/storage/disk-management/change-a-gpt-disk-into-an-mbr-disk#:~:text=Back%20up%20or%20move%20all,click%20Convert%20to%20MBR%20disk.
 
