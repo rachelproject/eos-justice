@@ -113,3 +113,6 @@ the boot/grub/grub.cfg for headless reformatting is here in github also.
 
 ## DirHTML Listings
 I am using Arclab Dir2HTML
+
+## VirtualBox 
+For whatever reason, when I clonezilla off of a Securebook, the resultant image requires enabling EFI on the virtual box https://www.techwalla.com/articles/how-to-get-to-bios-on-virtualbox
