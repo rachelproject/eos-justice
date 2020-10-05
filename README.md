@@ -60,6 +60,28 @@ systemctl unmask eos-autoupdater.service
 
 A slightly cleaner way of disabling automatic updates is to copy /usr/share/eos-updater/eos-autoupdater.conf to /etc/eos-updater/ and change `LastAutomaticStep=3` to `LastAutomaticStep=1`, so that way the user will know when an update is available, it just won't be applied automatically.
 
+Here is some email traffic that helped me execute the above:
+
+Hi team -
+
+I'm trying to execute "A slightly cleaner way of disabling automatic updates is to copy /usr/share/eos-updater/eos-autoupdater.conf to /etc/eos-updater/ and change LastAutomaticStep=3 to LastAutomaticStep=1, so that way the user will know when an update is available, it just won't be applied automatically"
+  
+As suggested here, but having trouble with creating eos-updater in "etc" - Operation not permitted -- or -- in edited /usr/share/eos-updater/eos-autoupdater.conf "OS is read-only" 
+
+What command are you using? Does `pkexec mkdir -p /etc/eos-updater` work? That would need to be run by a user with sudo rights.
+
+
+Jeremy Schwartz <jeremy@worldpossible.org>
+Mon, Aug 31, 4:09 PM
+to Phaedrus, Deployment
+
+that did work, great -- thank you
+
+I still had to copy /usr/share/eos-updater/eos-autoupdater.conf to my home folder so I could edit eos-autoupdater.conf and then copy it to /etc/eos-updater after using the new command to create that folder. 
+
+Thank you, I'm going to put the device online and see if it avoids updating.
+
+
 
 ## Resize Disk
 when putting the smaller (240GB) Clonezilla image on a 480GB drive
