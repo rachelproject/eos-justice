@@ -145,7 +145,7 @@ dconf write /org/gnome/login-screen/disable-user-list false
 gsettings set org.gnome.desktop.screensaver user-switch-enabled true
 gsettings set org.gnome.desktop.lockdown disable-user-switching false
 
-##grubx efi fix for no ostree found
+## grubx efi fix for no ostree found
 WARNING: Please note that this assumes the system is installed to /dev/sda. You'll need to adapt it for your own setup, and getting this wrong has a risk of data loss or breaking the OS.
 
 sudo mount /dev/sda1 /mnt
