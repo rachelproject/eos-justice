@@ -138,3 +138,24 @@ I am using Arclab Dir2HTML
 
 ## VirtualBox 
 For whatever reason, when I clonezilla off of a Securebook, the resultant image requires enabling EFI on the virtual box https://www.techwalla.com/articles/how-to-get-to-bios-on-virtualbox
+
+
+## lock screen user switching
+dconf write /org/gnome/login-screen/disable-user-list false
+gsettings set org.gnome.desktop.screensaver user-switch-enabled true
+gsettings set org.gnome.desktop.lockdown disable-user-switching false
+
+##grubx efi fix for no ostree found
+WARNING: Please note that this assumes the system is installed to /dev/sda. You'll need to adapt it for your own setup, and getting this wrong has a risk of data loss or breaking the OS.
+
+sudo mount /dev/sda1 /mnt
+sudo cp grubx64.efi /mnt/EFI/endless/grubx64.efi
+sudo umount /mnt
+
+Also, please note that if the file got corrupted during download or copying, the system will become unbootable and difficult to recover (you'll need to USB-boot, manually mount the ESP from the internal disk and copy a "good" file over it). I recommend verifying that the copy was good using checksums.
+
+A fixed grubx64.efi file can be found in this ZIP, at /EFI/BOOT/grubx64.efi: https://images-dl.endlessm.com/release/3.8.4/eos-amd64-amd64/base/eos-eos3.8-amd64-amd64.200706-185259.base.boot.zip. The SHA256 checksum of this zip file is e2963ee3a2a15019beb439d4418f919c6585cc092ceb94c3c507aac35e85a824, so you can verify your download as well.
+
+Finally, while this is something our developers do as part of their day-to-day activities, this is not a standard procedure we would normally share with partners to be done on their side. It has not been reviewed to the same level of something we would publish as official documentation. So please be cautious and try it first on a test machine that you would not mind too much if things go wrong and you need to do a full reflash, as there may be some errors.
+
+With that final disclaimer, I hope this helps and makes your deployments a bit easier to maintain.
