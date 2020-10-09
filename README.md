@@ -149,7 +149,9 @@ gsettings set org.gnome.desktop.lockdown disable-user-switching false
 WARNING: Please note that this assumes the system is installed to /dev/sda. You'll need to adapt it for your own setup, and getting this wrong has a risk of data loss or breaking the OS.
 
 sudo mount /dev/sda1 /mnt
+
 sudo cp grubx64.efi /mnt/EFI/endless/grubx64.efi
+
 sudo umount /mnt
 
 Also, please note that if the file got corrupted during download or copying, the system will become unbootable and difficult to recover (you'll need to USB-boot, manually mount the ESP from the internal disk and copy a "good" file over it). I recommend verifying that the copy was good using checksums.
