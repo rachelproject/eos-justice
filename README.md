@@ -133,6 +133,14 @@ This only works sometimes, must also make sure disk is "MBR" formatted. https://
 
 the boot/grub/grub.cfg for headless reformatting is here in github also.
 
+## Making Imaging USB
+Boot from a clonezilla USB
+Use a large SSD as /home/partimag to put clonezilla on a disk
+Transfer that image to a clonezilla USB set to autoboot and image
+make a copy of that USB with Win32DiskImager
+use the .img file in imageUSB to create 4 more master USBs
+use imageUSB and the copy devices to make more USBs
+
 ## DirHTML Listings
 I am using Arclab Dir2HTML
 
