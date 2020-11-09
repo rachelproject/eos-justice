@@ -1,19 +1,25 @@
-Rename RACHEL icon from Corrections Content
+Rename RACHEL icon from Corrections Content -- this might be tricky to script, perhaps easier to script deleting this icon and making a new one that just says RACHEL
+
 Remove World Possible Videos from RACHEL (remove module and and edit main RACHEL index page)
+
 Remove words "for Correctional Settings" from footer
+
 In TED talks original module, the index page says "DCYF TED Talks Expansion Pack" -- change to "TED Talks"
+
 In TED Talks Expanded module, remove commentary beneath "TED Talks Expanded" on RACHEL homepage. Change commentary to "Additional TED Talk videos"
+
 In TED Talks Expanded module, the index page says "DCYF TED Talks Expansion Pack" -- change to "TED Talks"
+
 Remove TED talks from music theory folder:
   sudo rm -r /var/local/bin/rachel/modules/musictheory/NYC-TED_Talks_Expansion/*
+
 Remove inappropriate TED videos:
 these videos are in /var/local/bin/rachel/modules/*TED*
 Aimee Mullins	My 12 pairs of legs
 Aimee Mullins	Changing my legs
 Alexa Meade	You’re Body is My Canvas
 Dan Dennet	Cute, Sexy, and Sweet
-Mary Roach	10 Things you didn’t know about Orgasms
-Round 2	
+Mary Roach	10 Things you didn’t know about Orgasms	
 Alison Jackson	unusual glimpse at celebrity
 Al Vernacchio	sex needs a new metaphor
 Amy Lockwood	selling condoms in the congo
@@ -21,7 +27,6 @@ Carin Bondor	The birds and the bees are just the beginning
 Christopher Ryan	Are we sexual omnivores?
 Isabelle Allenda-	how to live passionately
 Quixotic Fusion	Dancing with light
-Round 3	
 Diane Kelly	What we didn’t know about penis anatomy
 Elizabeth Pisani 	sex, drugs and HIV lets get rational
 Ester Perel	Rethinking infidelity
@@ -41,7 +46,6 @@ Johnathon Harris	The Web Secret Stories
 Francis Collins	Need better drugs
 Johanna Blakely	Social Media and the end of Gender
 Hans Roshing	Insights on HIV
-Round 4	
 Philip Zimbardo	The Psychology of Evil
 Philip Zimbardo	The Psychology of Time
 Philip Zimbardo	The demise of guys
