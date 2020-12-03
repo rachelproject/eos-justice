@@ -169,3 +169,10 @@ A fixed grubx64.efi file can be found in this ZIP, at /EFI/BOOT/grubx64.efi: htt
 Finally, while this is something our developers do as part of their day-to-day activities, this is not a standard procedure we would normally share with partners to be done on their side. It has not been reviewed to the same level of something we would publish as official documentation. So please be cautious and try it first on a test machine that you would not mind too much if things go wrong and you need to do a full reflash, as there may be some errors.
 
 With that final disclaimer, I hope this helps and makes your deployments a bit easier to maintain.
+
+
+Disable the self password reset service
+In case you don't want anyone or yourself to unlock the computer when losing the password, you can disable it.
+
+Open a terminal then enter:
+pkexec --user Debian-gdm dbus-run-session gsettings set org.gnome.shell password-reset-allowed disable
