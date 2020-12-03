@@ -171,7 +171,7 @@ Finally, while this is something our developers do as part of their day-to-day a
 With that final disclaimer, I hope this helps and makes your deployments a bit easier to maintain.
 
 
-Disable the self password reset service
+## Disable the self password reset service
 In case you don't want anyone or yourself to unlock the computer when losing the password, you can disable it.
 
 Open a terminal then enter:
