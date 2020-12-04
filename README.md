@@ -176,3 +176,9 @@ In case you don't want anyone or yourself to unlock the computer when losing the
 
 Open a terminal then enter:
 pkexec --user Debian-gdm dbus-run-session gsettings set org.gnome.shell password-reset-allowed disable
+
+## find recently used apps
+
+maybe of interest - the file ~/.local/share/gnome-shell/application_state  contains a list maintained by the desktop shell of apps by frequency and last use
+
+
