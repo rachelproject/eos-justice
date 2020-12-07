@@ -141,6 +141,21 @@ make a copy of that USB with Win32DiskImager
 use the .img file in imageUSB to create 4 more master USBs
 use imageUSB and the copy devices to make more USBs
 
+## Making Imaging USB v2
+bootable clonezilla USB
+add 1tb hdd as /home/partimag
+local device image to 1TB hdd
+boot again and mount 1tb hdd as /home/partimag
+now the option will show to create recovery disk
+create recovery disk as iso on same 1tb hdd
+make sure to enter option ask_user and reformat disk size based on target disk proportionally
+iso will be on 1tb hdd
+burn that iso using rufus to a 256gb usb stick
+boot selection (iso); partition scheme MBR; Target system BIOS of UEFI; use DD to copy
+make more copies with the disk imagers
+take completed devices with disk imagers back to windows machine and make leftover partition exFAT and named storage
+put configuration USB files on that partition
+
 ## DirHTML Listings
 I am using Arclab Dir2HTML
 
